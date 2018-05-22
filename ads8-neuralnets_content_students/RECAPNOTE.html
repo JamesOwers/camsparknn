@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<h1 id="ads8---neural-nets---recap-note">ADS8 - Neural Nets - Recap Note</h1>
+<p>In this short note we list the key-concepts that should be clear after the weekend as well as some pointers for extra-readings or references.</p>
+<h2 id="key-concepts">Key Concepts</h2>
+<p>The main &quot;important&quot; concepts that you should feel reasonably comfortable with essentially relate to day 1 (Multilayer Perceptron and Convolutional Neural Nets):</p>
+<ul>
+<li>The perceptron and the link to a linear classifier</li>
+<li>Trained parameters of a Neural Net: <em>weights</em> and <em>biases</em></li>
+<li>&quot;Fixed&quot; parameters (hyperparameters) of a Neural Net: <em>architecture</em>, <em>activation functions</em>, <em>regularisation</em></li>
+</ul>
+<p>A nice website to get your head around this is the <a href="http://playground.tensorflow.org/">tensorflow playground</a>.</p>
+<ul>
+<li>Convolution in 1D and 2D</li>
+<li>Convolution layer</li>
+<li>MaxPooling layer</li>
+<li>Stochastic Gradient Descent</li>
+<li>VGG16 as a simple &quot;blackbox&quot; feature extraction tool for images</li>
+</ul>
+<p><strong>More advanced concepts</strong> * Neural Network regularisation (<em>Dropout</em>, <em>BatchNorm</em>, <em>weight regularisation</em>, <em>gradient clipping</em> etc). There is a nice <a href="https://www.youtube.com/watch?v=vq2nnJ4g6N0">video tutorial</a> on BatchNorm * Stepping schemes and initialisation (<em>Adam</em>, <em>RMSProp</em>, <em>Glorot init</em>, ...) * Recurrent Neural Nets (<em>RNNs</em>, <em>LSTMs</em>, <em>GRU</em>) * Issues with RNNs (<em>vanishing gradients</em>, <em>slow training</em>, <em>lots of hyperparameters to tune</em>) * ...</p>
+<h3 id="walk-through-examples">Walk-through examples</h3>
+<p>Here are some exercises that you could try doing if you wanted to get more of a grip of the Keras API and applications of NNs:</p>
+<p><strong>Image recognition</strong>: * Implement a simple ConvNet (with maybe ~100-1000 neurons) on <code>fashionMNIST</code> <a href="https://github.com/zalandoresearch/fashion-mnist">(benchmarks)</a>. To get higher scores you will need to tweak the regularisation parameters etc which is an excellent way to get a grip with Keras.</p>
+<p><strong>Sequences</strong>: * Finish the <code>RNN-regression</code> notebook. * Check the Kaggle-web-traffic problem. Top solutions are available on Github: <a href="https://github.com/Arturus/kaggle-web-traffic">here</a> and <a href="https://github.com/sjvasquez/web-traffic-forecasting">here</a>. Going through one of those and trying to reproduce the results is very likely to help you a lot with understanding how the API works.</p>
+<h3 id="resources-extra-readings">Resources / Extra readings</h3>
+<p>There are some truly excellent resources out there for learning more about Neural Networks.</p>
+<p><strong>Tutorials</strong> * <a href="http://colah.github.io/posts/2014-07-Conv-Nets-Modular/">modular look at CNN</a>, <em>a simple look at CNN</em> * <a href="https://wiki.tum.de/display/lfdv/Basic+Level">basic knowledge + quick overview of CNN</a>, <em>a wiki-style page with some good explanations</em> * <a href="https://wiki.tum.de/display/lfdv/Advanced+Level">more advanced Neural Nets</a> <em>a follow up to the previous link</em> * <a href="http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/">Recurrent NN intro</a> * <a href="https://iamtrask.github.io/2015/11/15/anyone-can-code-lstm/">anyone can code an LSTM-RNN in Python</a>, <em>a great way to think more about what happens in an LSTM cell</em> * <a href="http://course.fast.ai/lessons/lessons.html">Videos for Deep Learning</a>, <em>a bunch of great videos on Deep Learning</em> * <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/">The unreasonable effectiveness of RNNs</a>, <em>a fun blog post by Karpathy showing some cool tricks with RNNs, the code generation one is particularly impressive</em> * <a href="https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/">time series with LSTM</a>, <em>a simple walkthrough Keras for time series</em> * <a href="http://www.jakob-aungiers.com/articles/a/Multidimensional-LSTM-Networks-to-Predict-Bitcoin-Price">LSTM for bitcoin</a>, <em>want to predict bitcoin prices? maybe try this?</em> * <a href="https://www.youtube.com/watch?v=yk6XDFm3J2c">karpathy's automated image captioning with convnets and rnns</a></p>
+<p><strong>Further readings</strong> * <a href="https://github.com/yenchenlin/awesome-adversarial-machine-learning">Adversarial ML</a> * <a href="https://devblogs.nvidia.com/deep-learning-self-driving-cars/">self driving cars use CNNs</a> * <a href="https://arxiv.org/pdf/1705.07962.pdf">pix2code paper</a> <em>transforming a GUI into code via NNs</em> * <a href="https://blog.floydhub.com/turning-design-mockups-into-code-with-deep-learning/">turning design mockups into code</a> <em>in this post the author explains how to code a basic HTML+CSS website based on a picture of a design mockup</em> * <a href="https://arxiv.org/pdf/1506.00019.pdf">A critical review of RNN for sequence learning</a></p>
+<h3 id="fun-videos">Fun videos</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=FmSsek5luHk">live captioning</a></li>
+<li><a href="https://vimeo.com/146492001">live captioning in the wild</a></li>
+<li><a href="https://www.youtube.com/watch?v=umRdt3zGgpU">quadcopter navigation in a forest</a></li>
+<li><a href="https://www.youtube.com/watch?v=0FW99AQmMc8">visually indicated sounds</a></li>
+<li><a href="https://github.com/lengstrom/fast-style-transfer">style transfer</a></li>
+<li><a href="https://www.theverge.com/2017/12/13/16772636/mgmt-when-you-die-video-style-transfer-ai">style transfer on a music clip</a></li>
+<li><a href="https://www.youtube.com/watch?v=HJ58dbd5g8g">self-driving car recognise objects</a> and <a href="https://www.youtube.com/watch?v=yQwfDxBMtXg">another cool one with label</a></li>
+<li><a href="https://www.youtube.com/watch?v=VOC3huqHrss">You Only Look Once detection on James Bond</a> guy behind this is hilarious, looking at the code is highly recommended <a href="https://github.com/pjreddie/darknet">darknet</a></li>
+</ul>
+</body>
+</html>
